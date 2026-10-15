@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt_demo?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    # Demo secret only. Generate your own Base64 secret for real use.
+    secret: VGhpc0lzQURlbW9TZWNyZXRLZXlGb3JKV1RTaGFuZFNwcmluZ0Jvb3QyMDI2IQ==
+    access-token-expiration-ms: 900000
+    refresh-token-expiration-ms: 604800000
